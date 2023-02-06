@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Test from './components/Test';
+import { useState } from 'react';
+import Show from './components/Show';
+
+// let product = {
+  
+// }
 
 function App() {
+
+  let handleChange = (e) => {
+    setProduct(e.target.value)
+  }
+
+  let [product, setProduct] = useState("")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello</h1>
+      <Test coba="coba aja" paraf="lorem ipsum dolor sit"/>
+      <input type="text" onChange={handleChange}/>
+      <br></br>
+      <Show product={product}/>
     </div>
   );
 }
